@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 16:11:31 by xel               #+#    #+#             */
-/*   Updated: 2022/03/01 17:25:31 by xel              ###   ########.fr       */
+/*   Created: 2022/03/01 17:49:48 by xel               #+#    #+#             */
+/*   Updated: 2022/03/01 18:12:26 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memmove(void *dest, const void *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-    size_t  i;
-    void    *tmp;
+	long long	nbr;
 
-    i = 0;
-    while (i < n)
-    {
-        (*(unsigned char *)(tmp + i)) = (*(unsigned char *)(src + i));
-        i++;
-    }
-    i = 0;
-    while (i < n)
-    {
-        (*(unsigned char *)(dest + i)) = (*(unsigned char *)(tmp + i));
-        i++;
-    }
-    return ((unsigned char *)dest);
+	nbr = n;
+	if (nbr < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nbr *= -1;
+	}
+	if (nbr > 9)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putnbr_fd(nbr % 10, fd);
+	}
+	else
+		ft_putchar_fd(nbr + 48, fd);
 }

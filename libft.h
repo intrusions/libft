@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:12:15 by xel               #+#    #+#             */
-/*   Updated: 2022/03/01 16:58:33 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/01 17:59:41 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,9 @@ char *ft_strjoin(char const *s1, char const *s2);
 char    *ft_itoa(int nb);
 char	**ft_split(char *str, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void    ft_putnbr_fd(int n, int fd);
 
 #endif
