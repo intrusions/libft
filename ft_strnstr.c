@@ -4,14 +4,12 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	size_t			n;
 	size_t			k;
-	char		*ptr;
 
-	ptr = 0;
 	n = 0;
 	k = 0;
-	if (s2[k] == '\0')
+	if (!s2)
 		return ((char *)s1);
-	while (s1[n] != '\0' && (n < len))
+	while (s1[n] != '\0' && (n <= len))
 	{
 		k = 0;
 		if (s1[n] == s2[k])
@@ -25,5 +23,5 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 		}
 		n++;
 	}
-	return (ptr);
+	return (NULL);
 }
