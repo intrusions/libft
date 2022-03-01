@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/01 16:12:15 by xel               #+#    #+#             */
+/*   Updated: 2022/03/01 16:58:33 by xel              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -39,9 +51,6 @@ char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strjoin(char const *s1, char const *s2);
 char    *ft_itoa(int nb);
 char	**ft_split(char *str, char c);
-
-
-
-
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
