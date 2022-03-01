@@ -5,13 +5,15 @@ char	*ft_strchr(const char *s, int c)
 	int			i;
 
 	i = 0;
-	if (c == '\0')
-		return (s);
-	while (s[i] != '\0')
+	if (!s)
+		return (NULL);
+	while (s[i])
 	{
-		if (s[i] == c)
-			return (&s[i]);
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
 		i++;
 	}
+	if (s[i] == (char)c)
+		return ((char *)(s + i));
 	return (NULL);
 }
