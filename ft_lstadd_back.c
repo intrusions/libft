@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 00:13:13 by xel               #+#    #+#             */
-/*   Updated: 2022/03/02 01:33:04 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/02 02:18:45 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while (*lst)
+	while ((*lst)->next)
 		*lst = (*lst)->next;
-	*lst = new;
+	(*lst)->next = new;
 }
