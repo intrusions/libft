@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:11:46 by xel               #+#    #+#             */
-/*   Updated: 2022/03/01 16:30:43 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/02 16:35:01 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 
 	dest_size = ft_strlen(dest);
 	src_size = ft_strlen(src);
-	if (size <= dest_size || !size)
+	if (size - 1 <= dest_size)
 		return (src_size + size);
 	index = 0;
-	while (index < (size - 1))
+	while (dest_size + index < (size - 1))
 	{
-		dest[index] = src[index];
+		dest[dest_size + index] = src[index];
 		index++;
 	}
 	dest[index] = '\0';

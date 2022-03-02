@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:11:57 by xel               #+#    #+#             */
-/*   Updated: 2022/03/01 16:31:26 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/02 16:54:02 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,16 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	size_t			k;
 
 	n = 0;
-	k = 0;
-	if (!s2)
+	if (!*s2 || !s2)
 		return ((char *)s1);
-	while (s1[n] != '\0' && (n <= len))
+	while (s1[n] && (n < len))
 	{
 		k = 0;
-		if (s1[n] == s2[k])
+		while ((s1[n + k] == s2[k] && ((n + k) < len)))
 		{
-			while (s2[k] && (s1[n + k] == s2[k]))
-			{
-				if (s2[k + 1] == '\0')
-					return ((char *)&s1[n]);
-				k++;
-			}
+			if (s2[k + 1] == '\0')
+				return ((char *)&s1[n]);
+			k++;
 		}
 		n++;
 	}
