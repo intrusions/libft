@@ -6,13 +6,13 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 00:08:40 by xel               #+#    #+#             */
-/*   Updated: 2022/03/02 00:10:56 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/02 01:23:47 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst->next)
 		lst = lst->lext;
