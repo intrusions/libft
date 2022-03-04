@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:12:15 by xel               #+#    #+#             */
-/*   Updated: 2022/03/02 01:38:16 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/04 18:13:35 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,17 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-char	*ft_strnstr(const char *s1, const char *s2, size_t len); // ko
+char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 int		ft_atoi(const char *str);
 
 // malloc part
-void	*ft_calloc(size_t nmemb, size_t size); // ko
+void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 
 // second part
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_itoa(int nb);
 char	**ft_split(char *str, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
@@ -63,7 +64,7 @@ void	ft_putnbr_fd(int n, int fd);
 
 //bonus part
 t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new); // ko
+void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);

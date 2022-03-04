@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 00:26:50 by xel               #+#    #+#             */
-/*   Updated: 2022/03/02 16:24:47 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/04 15:04:03 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	curr = *lst;
 	while (curr)
 	{
-		curr = (*lst)->next;
+		*lst = curr;
+		curr = curr->next;
 		del((*lst)->content);
 		free(*lst);
 	}
