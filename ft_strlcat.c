@@ -6,28 +6,37 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 16:11:46 by xel               #+#    #+#             */
-/*   Updated: 2022/03/02 16:35:01 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/05 18:06:05 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+static size_t	ft_strnlen(const char *s, size_t max_len)
 {
-	size_t	index;
-	size_t	dest_size;
-	size_t	src_size;
+	size_t	i;
 
-	dest_size = ft_strlen(dest);
-	src_size = ft_strlen(src);
-	if (size - 1 <= dest_size)
-		return (src_size + size);
-	index = 0;
-	while (dest_size + index < (size - 1))
+	i = 0;
+	while (s[i] && i < max_len)
+		i++;
+	return (i);
+}
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	src_len;
+	size_t	dst_len;
+
+	src_len = ft_strlen(src);
+	dst_len = ft_strnlen(dst, size);
+	if (size == dst_len)
+		return (size + src_len);
+	if (size > (dst_len + src_len))
+		ft_memcpy((dst + dst_len), src, (src_len + 1));
+	else
 	{
-		dest[dest_size + index] = src[index];
-		index++;
+		ft_memcpy((dst + dst_len), src, (size - dst_len - 1));
+		dst[size - 1] = 0;
 	}
-	dest[index] = '\0';
-	return (dest_size + src_size);
+	return (dst_len + src_len);
 }
