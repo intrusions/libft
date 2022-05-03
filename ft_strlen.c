@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jucheval <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 16:11:51 by xel               #+#    #+#             */
-/*   Updated: 2022/05/03 11:30:09 by jucheval         ###   ########.fr       */
+/*   Created: 2022/05/03 15:19:48 by jucheval          #+#    #+#             */
+/*   Updated: 2022/05/03 17:25:48 by jucheval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (0);
 	while (s[i])
 		i++;
 	return (i);

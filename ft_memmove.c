@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: jucheval <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 16:11:31 by xel               #+#    #+#             */
-/*   Updated: 2022/03/05 17:39:15 by xel              ###   ########.fr       */
+/*   Created: 2022/05/03 15:18:34 by jucheval          #+#    #+#             */
+/*   Updated: 2022/05/03 20:12:58 by jucheval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d = dest;
 	s = src;
+	if (!dest && !src)
+		return (NULL);
 	if (dest < src)
 		ft_memcpy(dest, src, n);
 	else

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jucheval <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 16:11:54 by xel               #+#    #+#             */
-/*   Updated: 2022/05/02 14:26:17 by jucheval         ###   ########.fr       */
+/*   Created: 2022/05/03 15:20:00 by jucheval          #+#    #+#             */
+/*   Updated: 2022/05/03 20:02:04 by jucheval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	j;
 
 	j = 0;
-	if (!s1 || !s2)
-		return (0);
 	if (n == 0)
 		return (0);
 	while ((s1[j] || s2[j]) && j < n)
