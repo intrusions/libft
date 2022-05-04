@@ -6,7 +6,7 @@
 /*   By: jucheval <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:16:18 by jucheval          #+#    #+#             */
-/*   Updated: 2022/05/04 12:40:36 by jucheval         ###   ########.fr       */
+/*   Updated: 2022/05/04 17:09:18 by jucheval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*dest;
-	int		x;
+	size_t	x;
 
 	x = nmemb * size;
 	if (nmemb && ((x / nmemb) != size))
