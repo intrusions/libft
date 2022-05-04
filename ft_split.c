@@ -6,20 +6,20 @@
 /*   By: jucheval <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:19:08 by jucheval          #+#    #+#             */
-/*   Updated: 2022/05/03 15:19:11 by jucheval         ###   ########.fr       */
+/*   Updated: 2022/05/04 10:32:16 by jucheval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_is_charset(char str, char c)
+static int	ft_is_charset(char const str, char c)
 {
 	if (str == c)
 		return (1);
 	return (0);
 }
 
-static int	ft_is_word(char *str, char c)
+static int	ft_is_word(char const *str, char c)
 {
 	int		i;
 	int		word;
@@ -42,7 +42,7 @@ static int	ft_is_word(char *str, char c)
 	return (word);
 }
 
-static char	**ft_malloc_word(char *str, char c, char **dest, int word)
+static char	**ft_malloc_word(char const *str, char c, char **dest, int word)
 {
 	int		i;
 	int		j;
@@ -69,7 +69,7 @@ static char	**ft_malloc_word(char *str, char c, char **dest, int word)
 	return (dest);
 }
 
-static char	**ft_put_word(char *str, char c, char **dest)
+static char	**ft_put_word(char const *str, char c, char **dest)
 {
 	int		i;
 	int		j;
@@ -93,7 +93,7 @@ static char	**ft_put_word(char *str, char c, char **dest)
 	return (dest);
 }
 
-char	**ft_split(char *str, char c)
+char	**ft_split(char const *str, char c)
 {
 	char	**dest;
 	int		word;
